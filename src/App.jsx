@@ -25,10 +25,23 @@ const App = () => {
       text: "This is my fourth note",
       date:"17/4/2024",
     }
-  ])
+  ]);
+
+  const addNote = (text)=>{
+    const date = new Date();
+    const newNote = {
+      id: nanoid(),
+      text:text,
+      date: date.toLocaleDateString()
+    }
+    const newNotes = [...notes, newNote];
+    setNotes(newNotes);
+  }
   return (
     <div className="container">
-      <NoteList notes={notes} />
+      <NoteList 
+        notes={notes} 
+        handleAddNote={addNote}/>
     </div>
   )
 }

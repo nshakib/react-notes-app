@@ -2,7 +2,7 @@ import React from 'react'
 import Note from './Note'
 import AddNote from './AddNote'
 
-const NoteList = ({notes}) => {
+const NoteList = ({notes,handleAddNote}) => {
   return (
     <div className='notes-list'>
         {
@@ -14,7 +14,7 @@ const NoteList = ({notes}) => {
             date={note.date}
             />
         )}
-        <AddNote />
+        <AddNote handleAddNote={handleAddNote}/>
     </div>
   )
 }
